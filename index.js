@@ -5,7 +5,7 @@ const startDate = new Date('2022-05-01')
 
 const hours = [
     0,      0,      0,      7,      4,      0,      0, 
-    0,      5,      5.5,    0,      0,      0,      7,
+    0,      5,      5.5,    0,      7,      0,      7,
     0,      5.5,    0,      7,      0,      5.5,    0,
     5.5,    0,      5.5,    5.5,    0,      5.5,    0,
     5,      5,      0,
@@ -18,9 +18,8 @@ const result = []
 
 for (let i =0; i < hours.length; i++) {
     let totalHours = 0
-    let date = new Date(startDate.valueOf());
+    let date = addDays(new Date(startDate.valueOf()), i)
 
-    date.setDate(date.getDate() + i);
     for (let j = i; j < i + 7; j ++) {
         totalHours += hours[j] || 0
     }
